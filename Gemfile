@@ -28,6 +28,7 @@ group :development do
   gem 'mailcatcher'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'brakeman', :require => false
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
