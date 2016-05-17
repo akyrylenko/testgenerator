@@ -16,10 +16,10 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: app_development
+  database: testgenerator_development
   pool:     5
-  username: app
-  password:
+  username: test1
+  password: password
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -44,18 +44,18 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: app_test
+  database: testgenerator_test
   pool:     5
-  username: app
-  password:
+  username: test1
+  password: password
   template: template0
 
 production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: app_production
+  database: testgenrator_production
   pool:     5
-  username: app
-  password:
+  username: test1
+  password: password
   template: template0
