@@ -43,7 +43,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'ci_reporter_rspec', '~> 1.0.0'
   gem 'rails_best_practices'
-  gem 'rubocop-checkstyle_formatter', require: false
   gem 'rubocop'
   gem 'thin'
 end
