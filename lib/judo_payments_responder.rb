@@ -10,7 +10,11 @@ class JudoPaymentsResponder
 
   def webpayments(options={})
     options.merge!({
-      headers: {'Api-Version' => '4.1.0'},
+      headers: {
+        'Api-Version' => '4.1.0',
+        'Content-Type' => 'application/json',
+        'Accept' => 'application/json',
+        },
       basic_auth: @auth
     })
     self.class.post("/webpayments/payments", options)
