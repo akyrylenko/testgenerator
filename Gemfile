@@ -21,6 +21,7 @@ gem 'kaminari'
 gem 'pg'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'httparty'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

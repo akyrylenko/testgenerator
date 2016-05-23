@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :judo_payments do
     collection do
+      get 'checkout' => "judo_payments#checkout"
       post 'success' => "judo_payments#success"
       get 'success' => "judo_payments#success"
       post 'failure' => "judo_payments#failure"

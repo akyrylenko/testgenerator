@@ -144,6 +144,9 @@ GEM
       tilt
     high_voltage (3.0.0)
     highline (1.7.8)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     interception (0.5)
     jbuilder (2.4.1)
@@ -185,6 +188,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.3)
+    multi_xml (0.5.5)
     nenv (0.3.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -388,6 +392,7 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   high_voltage
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
