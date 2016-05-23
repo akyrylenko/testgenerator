@@ -1,0 +1,35 @@
+<% pay_request_parameters = {
+	merchantID: '101093',
+	action: 'SALE',
+	type: 1,
+	countryCode: 826,
+	currencyCode: 826,
+	amount: 1001,
+	orderRef: 'Test purchase',
+	transactionUnique: generate_uuid,
+	redirectURL: root_url
+	}
+%>
+
+<%= text_area_tag :data, string_from_data(pay_request_parameters) %>
+
+<% pay_request_parameters[:signature] = createSignature(pay_request_parameters, fidelipay_key) %>
+
+
+<form action="<%= fidelipay_url %>" method="post">
+  <%= hidden_field_tag :merchantID, pay_request_parameters[:merchantID] %>
+  <%= hidden_field_tag :action, pay_request_parameters[:action] %>
+  <%= hidden_field_tag :type, pay_request_parameters[:type] %>
+  <%= hidden_field_tag :countryCode, pay_request_parameters[:countryCode] %>
+  <%= hidden_field_tag :currencyCode, pay_request_parameters[:currencyCode] %>
+  <%= text_field_tag :amount, pay_request_parameters[:amount] %>
+  <%= text_field_tag :orderRef, pay_request_parameters[:orderRef] %>
+  <%= hidden_field_tag :transactionUnique, pay_request_parameters[:transactionUnique] %>
+  <%= hidden_field_tag :redirectURL, pay_request_parameters[:redirectURL] %>
+  <%= hidden_field_tag :signature, pay_request_parameters[:signature] %>
+  <input type="submit" value="Pay Now">
+</form>
+
+<div>
+  <%= render partial: 'static_payment_form' %>
+</div>
