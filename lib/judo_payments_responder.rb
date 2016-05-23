@@ -10,6 +10,8 @@ class JudoPaymentsResponder
   end
 
   def webpayments(options={})
+    Rails.logger.debug("@auth: #{@auth.inspect}\n")
+    Rails.logger.debug("options: #{options.inspect}\n")
     options.merge!({
       headers: {
         'Host' => 'partnerapi.judopay-sandbox.com',
