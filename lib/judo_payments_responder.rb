@@ -16,6 +16,7 @@ class JudoPaymentsResponder
         'Api-Version' => '4.1.0',
         'Content-Type' => 'application/json',
         'Accept' => 'application/json',
+        'Cache-Control' => 'no-cache',
         },
       body: options.to_json,
       basic_auth: @auth,
