@@ -11,6 +11,7 @@ class JudoPaymentsResponder
   def webpayments(options={})
     options.merge!({
       headers: {
+        'Host' => 'partnerapi.judopay-sandbox.com',
         'Api-Version' => '4.1.0',
         'Content-Type' => 'application/json',
         'Accept' => 'application/json',
