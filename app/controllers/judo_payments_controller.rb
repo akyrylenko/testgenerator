@@ -3,10 +3,10 @@ class JudoPaymentsController < ApplicationController
   end
 
   def checkout
-    judo_payment_responder = JudoPaymentsResponder.new(judo_token, judo_secret)
+    judo_payment_responder = JudoPaymentsResponder.new(Rails.application.secrets.judo_token, Rails.application.secrets.judo_secret)
     
     payment_options = {
-	    judoId: judo_id,
+	    judoId: Rails.application.secrets.judo_id,
 	    amount: 125.00,
 	    currency: "GBP",
 	    yourConsumerReference: "example_customer_reference_00001",
@@ -33,20 +33,4 @@ class JudoPaymentsController < ApplicationController
 
   def failure
   end
-
-  # Judo pay methods
-
-  def judo_id
-  	'100149-012'
-  end
-
-  def judo_token
-  	'7sgyl3cDWR2PNBrM'
-  end
-  helper_method :judo_token
-
-  def judo_secret
-  	'991315ea553a29fb654ee094a239d84b122f8749523b1948ae1c46783be54736'
-  end
-  helper_method :judo_secret
 end
