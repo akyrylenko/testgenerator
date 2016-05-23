@@ -12,15 +12,16 @@ class JudoPaymentsResponder
   def webpayments(options={})
     Rails.logger.debug("@auth: #{@auth.inspect}\n")
     Rails.logger.debug("options: #{options.inspect}\n")
-    options.merge!({
+    httparty_request_options = {
       headers: {
         'Host' => 'partnerapi.judopay-sandbox.com',
         'Api-Version' => '4.1.0',
         'Content-Type' => 'application/json',
         'Accept' => 'application/json',
         },
-      basic_auth: @auth
-    })
-    self.class.post("/webpayments/payments", options)
+      body: options.to_json,
+      basic_auth: @auth,
+    }
+    self.class.post("/webpayments/payments", httparty_request_options)
   end
 end
