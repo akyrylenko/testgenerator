@@ -10,8 +10,6 @@ class JudoPaymentsResponder
   end
 
   def webpayments(options={})
-    Rails.logger.debug("@auth: #{@auth.inspect}\n")
-    Rails.logger.debug("options: #{options.inspect}\n")
     httparty_request_options = {
       headers: {
         'Host' => 'partnerapi.judopay-sandbox.com',

@@ -21,9 +21,6 @@ class JudoPaymentsController < ApplicationController
 
     judo_response = judo_payment_responder.webpayments(payment_options)
 
-    Rails.logger.debug("JUDO response:" + judo_response.inspect)
-
-    pp("JUDO response:" + judo_response.inspect)
   	@postUrl = judo_response['postUrl']
   	@referenceID = judo_response['reference']
   end
