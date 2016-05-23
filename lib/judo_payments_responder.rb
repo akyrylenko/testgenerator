@@ -2,6 +2,7 @@ require 'httparty'
 
 class JudoPaymentsResponder
   include HTTParty
+  debug_output $stdout
   base_uri 'https://partnerapi.judopay-sandbox.com'
 
   def initialize(u, p)
